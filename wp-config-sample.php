@@ -96,6 +96,13 @@ define('DB_HOST', 'localhost');
  */
 $table_prefix  = 'wp_';
 
+/**
+ * Cache Key Salt
+ * https://wordpress.org/support/topic/many-wp-installations-on-the-same-server
+ */
+
+define('WP_CACHE_KEY_SALT', md5(DB_NAME . __FILE__));
+
 /* That's all, stop editing! Happy blogging. */
 
 /**
