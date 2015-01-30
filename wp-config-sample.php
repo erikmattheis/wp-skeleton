@@ -47,8 +47,14 @@ if ( $urlParts[0] == 'dev' || $urlParts[0] == 'test' || $urlParts[0] == 'beta') 
  ** Limit Post Revision to 8
  */
 define( 'WP_POST_REVISIONS', 8 );
-
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/../content' );
+
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', 'prodwp.gsngrocers.com');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 /**
  * Debug settings
