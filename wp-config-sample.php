@@ -64,8 +64,8 @@ if ( WP_DEBUG == true ) {
 /**
  * Salts, for security
  */
-if ( file_exists( dirname( __FILE__ ) . '/./../wp-salts.php' ) ) {
-	include dirname( __FILE__ ) . '/./../wp-salts.php';
+if ( file_exists( dirname( __FILE__ ) . '/../wp-salts.php' ) ) {
+	include dirname( __FILE__ ) . '/../wp-salts.php';
 } else {
 	trigger_error( 'There is no wp-salts.php file for the ' . strip_tags( $_SERVER['SERVER_NAME'] ) . ' site.' , E_USER_WARNING );
 }
