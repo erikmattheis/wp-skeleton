@@ -14,6 +14,67 @@
  * @package WordPress
  */
 
+
+/**
+ * Setup the dev, staging, and production environments
+ */
+$urlParts = explode( '.', $_SERVER['SERVER_NAME'] );
+if ( $urlParts[0] == 'dev' || $urlParts[0] == 'test' || $urlParts[0] == 'beta') {
+	/**
+	 * DEV
+	 */
+	define( 'WP_STAGE', $urlParts[0] );
+	//define( 'WP_HOME', 'http://' . WP_STAGE . '.' . $project['domain'] );
+
+	// Show errors
+	define( 'WP_DEBUG', true );
+} elseif ( $urlParts[0] == 'stage' || $urlParts[0] == 'staging' ) {
+
+	// Hide errors
+	define( 'WP_DEBUG', false );
+} else {
+	/**
+	 * PRODUCTION
+	 */
+	define( 'WP_STAGE', 'production' );
+
+	// Hide errors
+	define( 'WP_DEBUG', false );
+}
+
+/**
+ * Misc. Settings
+ ** Limit Post Revision to 8
+ */
+define( 'WP_POST_REVISIONS', 8 );
+
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/../content' );
+
+/**
+ * Debug settings
+ */
+if ( WP_DEBUG == true ) {
+	ini_set( 'display_errors', '1' );
+	define( 'WP_DEBUG_DISPLAY', true );
+} else {
+	ini_set( 'display_errors', '0' );
+	define( 'WP_DEBUG_DISPLAY', false );
+}
+
+/**
+ * Salts, for security
+ */
+if ( file_exists( dirname( __FILE__ ) . '/./../config/wp-salts.php' ) ) {
+	include dirname( __FILE__ ) . '/./../config/wp-salts.php';
+} else {
+	trigger_error( 'There is no config/wp-salts.php file for the ' . strip_tags( $_SERVER['SERVER_NAME'] ) . ' site.' , E_USER_WARNING );
+}
+
+/**
+ * Language (leave blank for American English)
+ */
+define( 'WPLANG', '' );
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
@@ -26,12 +87,6 @@ define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -61,16 +116,13 @@ define('NONCE_SALT',       'put your unique phrase here');
  */
 $table_prefix  = 'wp_';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
-
 /* That's all, stop editing! Happy blogging. */
+
+/**
+ * You almost certainly do not want to change these
+ */
+define( 'DB_CHARSET', 'utf8' );
+define( 'DB_COLLATE', '' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
