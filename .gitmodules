@@ -1,3 +1,6 @@
 [submodule "htdocs"]
 	path = htdocs
 	url = https://github.com/WordPress/WordPress.git
+[submodule "content/themes/Rootstrap"]
+	path = content/themes/Rootstrap
+	url = https://github.com/Rootstrap/Rootstrap.git
