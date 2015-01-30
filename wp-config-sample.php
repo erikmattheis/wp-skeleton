@@ -64,10 +64,10 @@ if ( WP_DEBUG == true ) {
 /**
  * Salts, for security
  */
-if ( file_exists( dirname( __FILE__ ) . '/./../config/wp-salts.php' ) ) {
-	include dirname( __FILE__ ) . '/./../config/wp-salts.php';
+if ( file_exists( dirname( __FILE__ ) . '/./../wp-salts.php' ) ) {
+	include dirname( __FILE__ ) . '/./../wp-salts.php';
 } else {
-	trigger_error( 'There is no config/wp-salts.php file for the ' . strip_tags( $_SERVER['SERVER_NAME'] ) . ' site.' , E_USER_WARNING );
+	trigger_error( 'There is no wp-salts.php file for the ' . strip_tags( $_SERVER['SERVER_NAME'] ) . ' site.' , E_USER_WARNING );
 }
 
 /**
@@ -87,26 +87,6 @@ define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-
-/**#@-*/
 
 /**
  * WordPress Database Table prefix.
