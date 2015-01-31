@@ -4,3 +4,6 @@
 [submodule "content/themes/Rootstrap"]
 	path = content/themes/Rootstrap
 	url = https://github.com/Rootstrap/Rootstrap.git
+[submodule "content/plugins/wp-gsn-web-services"]
+	path = content/plugins/wp-gsn-web-services
+	url = https://github.com/gsn/wp-gsn-web-services
