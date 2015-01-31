@@ -14,32 +14,55 @@
  * @package WordPress
  */
 
+define( 'WP_ALLOW_MULTISITE', true );
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', true );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+
+/**
+* Language (leave blank for American English)
+*/
+define( 'WPLANG', '' );
 
 /**
  * Setup the dev, staging, and production environments
  */
 $urlParts = explode( '.', $_SERVER['SERVER_NAME'] );
-if ( $urlParts[0] == 'dev' || $urlParts[0] == 'test' || $urlParts[0] == 'beta') {
+if ( $urlParts[0] == 'dev') {
 	/**
-	 * DEV
+	 * Environment
 	 */
-	define( 'WP_STAGE', $urlParts[0] );
-	//define( 'WP_HOME', 'http://' . WP_STAGE . '.' . $project['domain'] );
+	define( 'GSN_ENV', $urlParts[0] );
 
 	// Show errors
 	define( 'WP_DEBUG', true );
-} elseif ( $urlParts[0] == 'stage' || $urlParts[0] == 'staging' ) {
+
+  // define root site
+  define( 'DOMAIN_CURRENT_SITE', 'localhost' );
+} elseif ( $urlParts[0] == 'test' || $urlParts[0] == 'beta' || $urlParts[0] == 'stage' || $urlParts[0] == 'staging' ) {
+	/**
+	* Environment
+	*/
+	define( 'GSN_ENV', $urlParts[0] );
 
 	// Hide errors
-	define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG', true );
+
+	// dynamic root site
+  define( 'DOMAIN_CURRENT_SITE',  ''.$_SERVER['HTTP_HOST'].'' );
 } else {
 	/**
-	 * PRODUCTION
-	 */
-	define( 'WP_STAGE', 'production' );
+	* Production
+	*/
+	define( 'GSN_ENV', 'prod' );
 
 	// Hide errors
 	define( 'WP_DEBUG', false );
+
+  // define root site
+	define('DOMAIN_CURRENT_SITE', 'wpa.gsngrocers.com');
 }
 
 /**
@@ -49,12 +72,6 @@ if ( $urlParts[0] == 'dev' || $urlParts[0] == 'test' || $urlParts[0] == 'beta') 
 define( 'WP_POST_REVISIONS', 8 );
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/../content' );
 
-define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', true);
-define('DOMAIN_CURRENT_SITE', 'prodwp.gsngrocers.com');
-define('PATH_CURRENT_SITE', '/');
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
 
 /**
  * Debug settings
@@ -73,26 +90,49 @@ if ( WP_DEBUG == true ) {
 if ( file_exists( dirname( __FILE__ ) . '/../wp-salts.php' ) ) {
 	include dirname( __FILE__ ) . '/../wp-salts.php';
 } else {
-	trigger_error( 'There is no wp-salts.php file for the ' . strip_tags( $_SERVER['SERVER_NAME'] ) . ' site.' , E_USER_WARNING );
+
+	/**#@+
+	* Authentication Unique Keys and Salts.
+	*
+	* Change these to different unique phrases!
+	* You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+	* You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+	*
+	* @since 2.6.0
+	*/
+	define('AUTH_KEY',         'put your unique phrase here');
+	define('SECURE_AUTH_KEY',  'put your unique phrase here');
+	define('LOGGED_IN_KEY',    'put your unique phrase here');
+	define('NONCE_KEY',        'put your unique phrase here');
+	define('AUTH_SALT',        'put your unique phrase here');
+	define('SECURE_AUTH_SALT', 'put your unique phrase here');
+	define('LOGGED_IN_SALT',   'put your unique phrase here');
+	define('NONCE_SALT',       'put your unique phrase here');
+
+	/**#@-*/
 }
 
 /**
- * Language (leave blank for American English)
- */
-define( 'WPLANG', '' );
+* Salts, for security
+*/
+if ( file_exists( dirname( __FILE__ ) . '/../wp-mysql.php' ) ) {
+	include dirname( __FILE__ ) . '/../wp-mysql.php';
+} else {
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'database_name_here');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+	/** MySQL database username */
+	define('DB_USER', 'username_here');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'password_here');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+}
 
 /**
  * WordPress Database Table prefix.
@@ -112,8 +152,8 @@ define('WP_CACHE_KEY_SALT', md5(DB_NAME . __FILE__));
 /* That's all, stop editing! Happy blogging. */
 
 /**
- * You almost certainly do not want to change these
- */
+* You almost certainly do not want to change these
+*/
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 

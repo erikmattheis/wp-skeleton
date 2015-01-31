@@ -13,9 +13,8 @@ This is simply a skeleton repo for a WordPress site.
 ## Deployment
 ```
 git clone https://github.com/gsn/wp-skeleton.git
-cp wp-skeleton /var/www --exclude .git wp-config.php
-cd /var/www
-cp wp-config-sample.php htdocs/wp-config-sample.php
+rsync -av ./ /var/www --exclude '.g*' -exclude-from '.gitignore'
+cp wp-config-sample.php /var/www/htdocs/wp-config-sample.php
 ```
 
 ## Update
