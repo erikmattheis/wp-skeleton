@@ -115,8 +115,8 @@ if ( file_exists( dirname( __FILE__ ) . '/../wp-salts.php' ) ) {
 /**
 * Salts, for security
 */
-if ( file_exists( dirname( __FILE__ ) . '/../wp-mysql.php' ) ) {
-	include dirname( __FILE__ ) . '/../wp-mysql.php';
+if ( file_exists( dirname( __FILE__ ) . '/../my-db.php' ) ) {
+	include dirname( __FILE__ ) . '/../my-db.php';
 } else {
 
 	// ** MySQL settings - You can get this info from your web host ** //
