@@ -10,3 +10,15 @@
 [submodule "content/themes/gsn-theme-basic"]
 	path = content/themes/gsn-theme-basic
 	url = https://github.com/gsn/gsn-theme-basic.git
+[submodule "content/plugins/wp-wordpress-mu-domain-mapping"]
+	path = content/plugins/wp-wordpress-mu-domain-mapping
+	url = https://github.com/crowdfavorite-mirrors/wp-wordpress-mu-domain-mapping.git
+[submodule "content/plugins/wp-wordpress-seo"]
+	path = content/plugins/wp-wordpress-seo
+	url = https://github.com/crowdfavorite-mirrors/wp-wordpress-seo.git
+[submodule "content/plugins/wp-contact-form-7"]
+	path = content/plugins/wp-contact-form-7
+	url = https://github.com/crowdfavorite-mirrors/wp-contact-form-7.git
+[submodule "content/plugins/wp-w3-total-cache"]
+	path = content/plugins/wp-w3-total-cache
+	url = https://github.com/crowdfavorite-mirrors/wp-w3-total-cache.git
