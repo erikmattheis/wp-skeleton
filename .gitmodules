@@ -7,3 +7,6 @@
 [submodule "content/plugins/wp-gsn-web-services"]
 	path = content/plugins/wp-gsn-web-services
 	url = https://github.com/gsn/wp-gsn-web-services
+[submodule "content/themes/gsn-theme-basic"]
+	path = content/themes/gsn-theme-basic
+	url = https://github.com/gsn/gsn-theme-basic.git
