@@ -22,3 +22,9 @@
 [submodule "content/plugins/wp-w3-total-cache"]
 	path = content/plugins/wp-w3-total-cache
 	url = https://github.com/crowdfavorite-mirrors/wp-w3-total-cache.git
+[submodule "content/plugins/wp-security-audit-log"]
+	path = content/plugins/wp-security-audit-log
+	url = https://github.com/wp-plugins/wp-security-audit-log.git
+[submodule "content/plugins/wordpress-seo"]
+	path = content/plugins/wordpress-seo
+	url = https://github.com/Yoast/wordpress-seo.git
