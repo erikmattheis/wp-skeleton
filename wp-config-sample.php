@@ -28,38 +28,38 @@ define( 'WPLANG', '' );
  */
 $urlParts = explode( '.', $_SERVER['SERVER_NAME'] );
 if ( $urlParts[0] == 'dev') {
-	/**
-	 * Environment
-	 */
-	define( 'GSN_ENV', $urlParts[0] );
+  /**
+   * Environment
+   */
+  define( 'GSN_ENV', $urlParts[0] );
 
-	// Show errors
-	define( 'WP_DEBUG', true );
+  // Show errors
+  define( 'WP_DEBUG', true );
 
   // define root site
   define( 'DOMAIN_CURRENT_SITE', 'localhost' );
 } elseif ( $urlParts[0] == 'test' || $urlParts[0] == 'beta' || $urlParts[0] == 'stage' || $urlParts[0] == 'staging' ) {
-	/**
-	* Environment
-	*/
-	define( 'GSN_ENV', $urlParts[0] );
+  /**
+  * Environment
+  */
+  define( 'GSN_ENV', $urlParts[0] );
 
-	// Hide errors
-	define( 'WP_DEBUG', true );
+  // Hide errors
+  define( 'WP_DEBUG', true );
 
-	// dynamic root site
+  // dynamic root site
   define( 'DOMAIN_CURRENT_SITE',  ''.$_SERVER['HTTP_HOST'].'' );
 } else {
-	/**
-	* Production
-	*/
-	define( 'GSN_ENV', 'prod' );
+  /**
+  * Production
+  */
+  define( 'GSN_ENV', 'prod' );
 
-	// Hide errors
-	define( 'WP_DEBUG', false );
+  // Hide errors
+  define( 'WP_DEBUG', false );
 
   // define root site
-	define('DOMAIN_CURRENT_SITE', 'wpa.gsn2.com');
+  define('DOMAIN_CURRENT_SITE', 'wpa.gsn2.com');
 }
 
 /**
@@ -74,19 +74,20 @@ define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/../content' );
  * Debug settings
  */
 if ( WP_DEBUG == true ) {
-	ini_set( 'display_errors', '1' );
-	define( 'WP_DEBUG_DISPLAY', true );
+  ini_set( 'display_errors', '1' );
+  define( 'WP_DEBUG_DISPLAY', true );
 } else {
-	ini_set( 'display_errors', '0' );
-	define( 'WP_DEBUG_DISPLAY', false );
+  ini_set( 'display_errors', '0' );
+  define( 'WP_DEBUG_DISPLAY', false );
 }
 
 /**
 * custom config if any
 */
 if ( file_exists( dirname( __FILE__ ) . '/../my-config.php' ) ) {
-	include dirname( __FILE__ ) . '/../my-config.php';
+  include dirname( __FILE__ ) . '/../my-config.php';
 } else {
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
@@ -142,7 +143,7 @@ define( 'DB_COLLATE', '' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+  define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
