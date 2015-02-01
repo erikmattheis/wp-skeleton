@@ -14,6 +14,7 @@
  * @package WordPress
  */
 
+define( 'SUNRISE', 'on' );
 define( 'WP_ALLOW_MULTISITE', true );
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', true );
@@ -155,7 +156,7 @@ define('WP_CACHE_KEY_SALT', md5(DB_NAME . __FILE__));
 * You almost certainly do not want to change these
 */
 define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', 'utf8_general_ci' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
