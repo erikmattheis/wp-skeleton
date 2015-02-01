@@ -62,7 +62,7 @@ if ( $urlParts[0] == 'dev') {
 	define( 'WP_DEBUG', false );
 
   // define root site
-	define('DOMAIN_CURRENT_SITE', 'wpa.gsngrocers.com');
+	define('DOMAIN_CURRENT_SITE', 'wpa.gsn2.com');
 }
 
 /**
