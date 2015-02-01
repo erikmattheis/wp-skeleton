@@ -68,7 +68,7 @@ if ( $urlParts[0] == 'dev') {
 
 /*REMOVE2
   // define root site
-  define('DOMAIN_CURRENT_SITE', 'admin.wpa.gsngrocers.com');
+  define('DOMAIN_CURRENT_SITE', 'admin.wpa.gsn2.com');
 REMOVE2*/
 }
 
