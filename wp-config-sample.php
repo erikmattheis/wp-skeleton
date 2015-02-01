@@ -138,7 +138,7 @@ define('WP_CACHE_KEY_SALT', md5(DB_NAME . __FILE__));
 * You almost certainly do not want to change these
 */
 define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', 'utf8_general_ci' );
+define( 'DB_COLLATE', '' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
