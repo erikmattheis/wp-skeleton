@@ -14,9 +14,17 @@
  * @package WordPress
  */
 
+/*REMOVE1
 define( 'SUNRISE', 'on' );
 define( 'WP_ALLOW_MULTISITE', true );
-//MULTISITE_CONFIG
+REMOVE1*/
+/*REMOVE2
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', true );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+REMOVE2*/
 
 /**
 * Language (leave blank for American English)
@@ -58,8 +66,10 @@ if ( $urlParts[0] == 'dev') {
   // Hide errors
   define( 'WP_DEBUG', false );
 
+/*REMOVE2
   // define root site
   define('DOMAIN_CURRENT_SITE', 'admin.wpa.gsngrocers.com');
+REMOVE2*/
 }
 
 /**
