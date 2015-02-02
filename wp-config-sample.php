@@ -15,10 +15,10 @@
  */
 
 /*REMOVE1
-define( 'SUNRISE', 'on' );
 define( 'WP_ALLOW_MULTISITE', true );
 REMOVE1*/
 /*REMOVE2
+define( 'SUNRISE', 'on' );
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', true );
 define( 'PATH_CURRENT_SITE', '/' );
@@ -68,7 +68,7 @@ if ( $urlParts[0] == 'dev') {
 
 /*REMOVE2
   // define root site
-  define('DOMAIN_CURRENT_SITE', 'admin.wpa.gsngrocers.com');
+  define('DOMAIN_CURRENT_SITE', 'wpa.gsngrocers.com');
 REMOVE2*/
 }
 
