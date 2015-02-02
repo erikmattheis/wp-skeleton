@@ -1,21 +1,9 @@
 [submodule "htdocs"]
 	path = htdocs
 	url = https://github.com/WordPress/WordPress.git
-[submodule "content/themes/Rootstrap"]
-	path = content/themes/Rootstrap
-	url = https://github.com/Rootstrap/Rootstrap.git
-[submodule "content/plugins/wp-gsn-web-services"]
-	path = content/plugins/wp-gsn-web-services
-	url = https://github.com/gsn/wp-gsn-web-services
 [submodule "content/themes/gsn-theme-basic"]
 	path = content/themes/gsn-theme-basic
 	url = https://github.com/gsn/gsn-theme-basic.git
-[submodule "content/plugins/wp-w3-total-cache"]
-	path = content/plugins/wp-w3-total-cache
-	url = https://github.com/crowdfavorite-mirrors/wp-w3-total-cache.git
-[submodule "content/plugins/wp-security-audit-log"]
-	path = content/plugins/wp-security-audit-log
-	url = https://github.com/wp-plugins/wp-security-audit-log.git
-[submodule "content/plugins/wordpress-seo"]
-	path = content/plugins/wordpress-seo
-	url = https://github.com/Yoast/wordpress-seo.git
+[submodule "content/plugins/wp-gsn-web-services"]
+	path = content/plugins/wp-gsn-web-services
+	url = https://github.com/gsn/wp-gsn-web-services
