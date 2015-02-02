@@ -35,18 +35,7 @@ define( 'WPLANG', '' );
  * Setup the dev, staging, and production environments
  */
 $urlParts = explode( '.', $_SERVER['SERVER_NAME'] );
-if ( $urlParts[0] == 'dev') {
-  /**
-   * Environment
-   */
-  define( 'GSN_ENV', $urlParts[0] );
-
-  // Show errors
-  define( 'WP_DEBUG', true );
-
-  // define root site
-  define( 'DOMAIN_CURRENT_SITE', 'localhost' );
-} elseif ( $urlParts[0] == 'test' || $urlParts[0] == 'beta' || $urlParts[0] == 'stage' || $urlParts[0] == 'staging' ) {
+if ( $urlParts[0] == 'localhost' || strpos($urlParts[0], 'wp-') !== false ) {
   /**
   * Environment
   */
@@ -55,8 +44,10 @@ if ( $urlParts[0] == 'dev') {
   // Hide errors
   define( 'WP_DEBUG', true );
 
+/*REMOVE2
   // dynamic root site
-  define( 'DOMAIN_CURRENT_SITE',  ''.$_SERVER['HTTP_HOST'].'' );
+  define( 'DOMAIN_CURRENT_SITE',  $urlParts[0].'.gsngrocers.com');
+REMOVE2*/
 } else {
   /**
   * Production
