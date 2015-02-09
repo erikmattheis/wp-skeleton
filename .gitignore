@@ -2,9 +2,9 @@
 .htaccess
 sitemap.xml
 sitemap.xml.gz
+my-ms-install.php
 wp-config.php
-my-salts.php
-my-db.php
+wp-config-sample.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
