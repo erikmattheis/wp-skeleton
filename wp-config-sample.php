@@ -34,7 +34,7 @@ define( 'WPLANG', '' );
 /**
  * Setup the dev, staging, and production environments
  */
-$urlParts = explode( '.', $_SERVER['SERVER_NAME'] );
+$urlParts = explode( '.', str_replace($_SERVER['SERVER_NAME'],"www.","") );
 if ( $urlParts[0] == 'localhost' || strpos($urlParts[0], 'wp-') !== false ) {
   /**
   * Environment
@@ -46,7 +46,7 @@ if ( $urlParts[0] == 'localhost' || strpos($urlParts[0], 'wp-') !== false ) {
 
 /*REMOVE2
   // dynamic root site
-  define( 'DOMAIN_CURRENT_SITE',  $urlParts[0].'.gsngrocers.com');
+  define( 'DOMAIN_CURRENT_SITE',  $urlParts[0].'.gsn.io');
 REMOVE2*/
 } else {
   /**
