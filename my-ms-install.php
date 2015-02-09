@@ -24,5 +24,4 @@ else if ($myStep == 3)  {
 }
 ?>
 <br />
-<a href="<?php echo wp_logout_url( '/wp-login.php' ); ?>" title="Logout">Logout</a>
-<?php 
+<a href="/wp-login.php?loggedout=true" title="Logout">Login again</a>
