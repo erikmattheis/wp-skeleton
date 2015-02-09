@@ -24,4 +24,5 @@ else if ($myStep == 3)  {
 }
 ?>
 <br />
+<a href="/wp-admin/my-ms-install.php?step=2" title="Step2">Step2</a>
 <a href="/wp-login.php?loggedout=true" title="Logout">Login again</a>
