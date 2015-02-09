@@ -33,33 +33,36 @@ define( 'WPLANG', '' );
 
 /**
  * Setup the dev, staging, and production environments
+ * This assume that there will always be a www in front
  */
-$urlParts = explode( '.', str_replace($_SERVER['SERVER_NAME'],"www.","") );
-if ( $urlParts[0] == 'localhost' || strpos($urlParts[0], 'wp-') !== false ) {
+ $serverName = $_SERVER['HTTP_HOST'];
+ $urlParts = explode( '.', $serverName);
+ if (strpos($serverName,'.gsngrocers.com') !== false) {
+   /**
+   * Production
+   */
+   define( 'GSN_ENV', 'prod' );
+
+   // Hide errors
+   define( 'WP_DEBUG', false );
+
+/*REMOVE2
+   // define root site
+   define('DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsngrocers.com');
+REMOVE2*/
+
+} else {
+
   /**
   * Environment
   */
   define( 'GSN_ENV', $urlParts[0] );
-
   // Hide errors
   define( 'WP_DEBUG', true );
 
 /*REMOVE2
   // dynamic root site
-  define( 'DOMAIN_CURRENT_SITE',  $urlParts[0].'.gsn.io');
-REMOVE2*/
-} else {
-  /**
-  * Production
-  */
-  define( 'GSN_ENV', 'prod' );
-
-  // Hide errors
-  define( 'WP_DEBUG', false );
-
-/*REMOVE2
-  // define root site
-  define('DOMAIN_CURRENT_SITE', 'wpa.gsngrocers.com');
+  define( 'DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsn.io');
 REMOVE2*/
 }
 
