@@ -16,14 +16,15 @@ get_header(); ?>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'gsnbasic' ); ?></p>
-
-						<?php get_search_form(); ?>
-
+						<p><?php _e( 'It looks like nothing was found at this location.  Maybe try one of the suggestions below?', 'gsnbasic' ); ?></p>
+						<ul>
+							<li>Click your brower's Refresh button or try reconnecting.</li>
+							<li>Check the spelling of the URL to make sure the address is correct (capitalization and punctuations are important) and then click your browser's Refresh button.</li>
+							<li>Go to <a href="/">Home Page</a> or <a href="javascript:void(0)" onclick="window.history.back();">Back</a> to previous page.</li>
+						</ul>
 				</section><!-- .error-404 -->
 			</div>
 		</main><!-- #main -->
 </div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
