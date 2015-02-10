@@ -51,7 +51,7 @@ define( 'WPLANG', '' );
    
 /*REMOVE2
    // define root site
-   define('DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsngrocers.com');
+   define('DOMAIN_CURRENT_SITE',  'www.'.$hostPart.'.gsngrocers.com');
 REMOVE2*/
 
 } else {
@@ -67,7 +67,7 @@ REMOVE2*/
   
 /*REMOVE2
   // dynamic root site
-  define( 'DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsn.io');
+  define( 'DOMAIN_CURRENT_SITE',  'www.'.$hostPart.'.gsn.io');
 REMOVE2*/
 }
 
