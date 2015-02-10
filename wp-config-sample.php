@@ -37,6 +37,7 @@ define( 'WPLANG', '' );
  */
  $serverName = $_SERVER['HTTP_HOST'];
  $urlParts = explode( '.', $serverName);
+ $hostPart = $urlParts[1];
  if (strpos($serverName,'.gsngrocers.com') !== false) {
    /**
    * Production
@@ -46,9 +47,11 @@ define( 'WPLANG', '' );
    // Hide errors
    define( 'WP_DEBUG', false );
 
+   $hostPart = $hostPart == 'gsngrocers' ? $urlParts[0] : $hostPart;
+   
 /*REMOVE2
    // define root site
-   define('DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsngrocers.com');
+   define('DOMAIN_CURRENT_SITE',  'www.'.$hostPart.'.gsngrocers.com');
 REMOVE2*/
 
 } else {
@@ -60,9 +63,11 @@ REMOVE2*/
   // Hide errors
   define( 'WP_DEBUG', true );
 
+  $hostPart = $hostPart == 'gsn' ? $urlParts[0] : $hostPart;
+  
 /*REMOVE2
   // dynamic root site
-  define( 'DOMAIN_CURRENT_SITE',  'www.'.$urlParts[1].'.gsn.io');
+  define( 'DOMAIN_CURRENT_SITE',  'www.'.$hostPart.'.gsn.io');
 REMOVE2*/
 }
 
