@@ -1,0 +1,1 @@
+<div class="gsn-content gsn-addons">Tools placeholder page for cache clearing and other stuff.</div>
