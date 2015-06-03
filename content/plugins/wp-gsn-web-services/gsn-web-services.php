@@ -49,7 +49,7 @@ function gsn_web_services_init() {
 add_action( 'parse_request', 'gsn_json_proxy_load');
 
 function gsn_json_proxy_load() {
-  if ( preg_match( '/proxy\/(.*)/i', $_SERVER["REQUEST_URI"] ) ) {
+  if ( preg_match( '/^\/proxy\/(.*)/i', $_SERVER["REQUEST_URI"] ) ) {
     include( dirname( __FILE__ ) . '/gsn-json-proxy.php' );
     die(0);
   }
